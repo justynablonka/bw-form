@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/validate/dist/validate.min.js"></script>
+</head>
+
+<body>
+    <form data-validate id="create-account-form">
+        <h1>Create an Account</h1>
+        <input type="text" name="name" id="name" placeholder="Name" required>
+        <input type="email" name="email" id="email" placeholder="E-mail" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
+        <input type="text" name="zipcode" id="zipcode" placeholder="ZIP Code" maxlength="5" pattern="[0-9]{5}" title="Please include a 5-digit number (no hyphens)." required>
+        <input type="number" name="age" id="age" placeholder="Age" min="18" max="120" pattern="[-+]?[0-9]" required>
+
+        <label id="label-gender">Gender:</label>
+
+        <div class="container gender">
+            <label><input type="radio" name="gender">Male</label>
+            <label><input type="radio" name="gender">Female</label>
+            <label><input type="radio" name="gender">Other</label>
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <input type="checkbox" name="agree" id="agree" required>
+            <label for="agree">I agree to the Terms & Conditions</label><br>
+        </div>
+
+        <input type="submit" value="Submit" class="btn"></button>
+    </form>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
